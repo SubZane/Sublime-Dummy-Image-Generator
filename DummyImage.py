@@ -2,10 +2,20 @@ import sublime, sublime_plugin, urllib2, json, os, re
 
 SETTINGS = sublime.load_settings("DummyImage.sublime-settings")
 BGCOLOR = SETTINGS.get('dm_bgcolor')
+if BGCOLOR == None:
+    BGCOLOR = "0eafff"
 TEXTCOLOR = SETTINGS.get('dm_textcolor')
+if TEXTCOLOR == None:
+    TEXTCOLOR = "ffffff"
 SIZE = SETTINGS.get('dm_size')
+if SIZE == None:
+    SIZE = "600x400"
 FORMAT = SETTINGS.get('dm_format')
+if FORMAT == None:
+    FORMAT = ".png"
 TEXT = SETTINGS.get('dm_text')
+if TEXT == None:
+    TEXT = "600x400"
 
 def insert_image(size):
     global BGCOLOR, TEXTCOLOR, FORMAT, TEXT
